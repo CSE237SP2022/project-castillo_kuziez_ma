@@ -37,7 +37,7 @@ public class Course {
     
     
     /*
-     * THEY HAVE TO IMPLEMENT THE REST, HAVE TO WRITE EVERYTHING WITH FIXME
+     * THEY HAVE TO IMPLEMENT THE REST, HAVE TO WRITE EVERYTHING WITH 
      */
     
     /*
