@@ -1,14 +1,17 @@
-import java.util.*;
+package Student;
 
 import Course.Course;
 
+import java.util.*;
+
+
 public class Student {
 	
-	private String id;
-	private String firstName;
-	private String lastName;
-	private int age;
-	private LinkedList<Course> courses;
+	public String id;
+	public String firstName;
+	public String lastName;
+	public int age;
+	public LinkedList<Course> courses;
 
 	
 	public Student() {
@@ -31,7 +34,6 @@ public class Student {
 	public String getId() {
 		return id;
 	}
-	
 	
 	public String getFirstName() {
 		return firstName;
@@ -60,16 +62,5 @@ public class Student {
 		if (!codes.contains(course.code)) courses.add(course);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+

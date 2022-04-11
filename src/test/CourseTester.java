@@ -1,12 +1,13 @@
 package test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import Course;
-import Student;
+import Course.Course;
+import Student.Student;
 
 class CourseTester {
 	
