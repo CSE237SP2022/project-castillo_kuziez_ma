@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class StudentTester {
 
 	@Test
-	void test() {
+	void testGetID() {
 		fail("Not yet implemented");
 	}
 
