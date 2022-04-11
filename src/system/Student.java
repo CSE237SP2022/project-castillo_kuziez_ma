@@ -1,6 +1,4 @@
-package Student;
-
-import Course.Course;
+package system;
 
 import java.util.*;
 

@@ -1,8 +1,6 @@
-package Course;
+package system;
 
 import java.util.*;
-
-import Student.Student;
 
 public class Course {
 	

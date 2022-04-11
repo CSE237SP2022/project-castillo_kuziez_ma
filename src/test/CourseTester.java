@@ -6,8 +6,8 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import Course.Course;
-import Student.Student;
+import system.Course;
+import system.Student;
 
 class CourseTester {
 	
