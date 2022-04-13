@@ -49,7 +49,13 @@ public class WriteToFile {
 		      myWriter.write(course.name+space);
 		      myWriter.write(course.credits+space);
 		      
-		      //TODO solve the issue of writing in students
+		      //Write the student ID's separated by hyphens on one line
+		      int class_size=course.enrolled.size();
+		      for( int i=0; i<class_size; i++) {
+		    	  myWriter.write(course.enrolled.get(i).id+"-");
+		      }
+		      myWriter.write(space);
+
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
 		    } catch (IOException e) {
@@ -101,7 +107,7 @@ public class WriteToFile {
 		      myWriter.write(person.id+space);
 		      myWriter.write(Integer.toString(person.age)+space);
 		     
-		      //TODO solve the issue of writing in courses
+//	Courses are not written in because they can be recovered by 1 way linkages (i.e. restored from the course side)
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
 		    } catch (IOException e) {

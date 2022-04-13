@@ -8,6 +8,7 @@ public class Course {
 	public String name;
     public int credits;
     public LinkedList<Student> enrolled;
+    public String enrolled_ids;
     
 
     public Course() {
@@ -15,6 +16,7 @@ public class Course {
     	name = "Placeholder";
     	credits = 3;
     	enrolled = new LinkedList<Student>();
+    	enrolled_ids = "placeholder";
     }
     
     public Course(String code, String name, int credits, LinkedList<Student> enrolled) {
