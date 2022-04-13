@@ -126,6 +126,12 @@ public class Webstac {
     	sys.printCourses();
     	
     	
+    	//initialize student and course arrays:
+    	Student[] allstuds=new Student [100];
+    	int studspot=0;
+    	int coursespot=0;
+    	Course[] allcourses= new Course [100];
+    	
     	//Begin interface.
     	String command="start";
     	while(!command.equals("shutdown")){
@@ -135,15 +141,30 @@ public class Webstac {
     		command = myObj.nextLine();  // Read user input
     		
     		if(command.equals("Add student")) {
-    			Student jack;
-    			Student placeholder=new Student();
+    			
     			System.out.println("Please enter First name");
-    			
-    			
+        		String Firstname = myObj.nextLine();  // Read user input
+    			System.out.println("Please enter Last name");
+        		String Lastname = myObj.nextLine();  // Read user input
+    			System.out.println("Please enter ID");
+        		String ID = myObj.nextLine();  // Read user input
+    			System.out.println("Please enter age ");
+        		int age = myObj.nextInt();  // Read user input
+        		allstuds[studspot]=new Student(ID,Firstname,Lastname,age);
+        		studspot++;
     		}
+    		
     		
     		if(command.equals("Add course")) {
     			
+    			System.out.println("Please enter code");
+        		String code = myObj.nextLine();  // Read user input
+    			System.out.println("Please enter name");
+        		String name = myObj.nextLine();  // Read user input
+    			System.out.println("Please enter credits ");
+        		int age = myObj.nextInt();  // Read user input
+        		LinkedList<Student> stud= new LinkedList<Student>();
+        		allcourses[coursespot]=new Course(code,name,age,stud);
     			
     		}
     			
@@ -156,4 +177,3 @@ public class Webstac {
     	
     }
     
-}
