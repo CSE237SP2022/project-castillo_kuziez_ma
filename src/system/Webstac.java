@@ -36,7 +36,7 @@ public class Webstac {
     	System.out.println("Students:");
     	System.out.println();
     	for (Student s : students) {
-    		System.out.println(s.id + " " + s.firstName + " " + s.lastName);
+    		System.out.println(s.getId() + " " + s.getFirstName() + " " + s.getLastName());
     	}
     	System.out.println();
     }
@@ -50,7 +50,7 @@ public class Webstac {
     		System.out.println("Credits: " + c.credits);
     		System.out.println("Enrolled:");
     		for (Student s : c.enrolled) {
-    			System.out.println(s.id + " " + s.firstName + " " + s.lastName);
+    			System.out.println(s.getId() + " " + s.getFirstName() + " " + s.getLastName());
     		}
     		System.out.println();
     	}
@@ -107,7 +107,7 @@ public class Webstac {
     			while(!copyCourses.get(i).equals("course") && !copyCourses.get(i).equals("end")) {
     				Student s = sys.getStudentById(copyCourses.get(i));
     				// if John Doe
-    				if (s.id.equals("000000")) {
+    				if (s.getId().equals("000000")) {
     					// do not add student
     					continue;
     				}

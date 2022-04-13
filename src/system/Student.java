@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Student {
 	
-	public String id;
-	public String firstName;
-	public String lastName;
-	public int age;
-	public LinkedList<Course> courses;
+	private String id;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private List<String> courses;
 
 	
 	public Student() {
@@ -17,10 +17,10 @@ public class Student {
 		firstName = "John";
 		lastName = "Doe";
 		age = 18;
-		courses = new LinkedList<Course>();
+		courses = new ArrayList<String>();
 	}
 
-	public Student(String id, String firstName, String lastName, int age, LinkedList<Course> courses) {
+	public Student(String id, String firstName, String lastName, int age, List<String> courses) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,7 +33,7 @@ public class Student {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.courses = new LinkedList<Course>();
+		this.courses = new ArrayList<String>();
 	}
 	
 	
@@ -53,19 +53,17 @@ public class Student {
 		return age;
 	}
 	
-	public LinkedList<String> getCourseCodes() {
-		LinkedList<String> codes = new LinkedList<String>();
-    	
-    	for (Course c : courses) codes.add(c.code);
-    	
-    	return codes;
+	public List<String> getCourses() {
+		return courses;
 	}
 	
 	
-	public void addCourse(Course course) {
-		LinkedList<String> codes = this.getCourseCodes();
-		
-		if (!codes.contains(course.code)) courses.add(course);
+	public boolean addCourse(Course course) {
+		if (!courses.contains(course.code)) {
+			courses.add(course.code);
+			return true;
+		}
+		return false;
 	}
 	
 }
