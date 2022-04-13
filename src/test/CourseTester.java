@@ -1,24 +1,25 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.LinkedList;
+import java.util.*;
 
 import org.junit.jupiter.api.Test;
 
-import system.Course;
-import system.Student;
+import sys.Course;
+import sys.Student;
 
 class CourseTester {
 	
 	LinkedList<Student> enrollmentList = new LinkedList<Student>();
-	Course calculus = new Course("Math", "Calculus", 3, enrollmentList);
-	LinkedList<Course> natcourses = new LinkedList<Course>();
-	Student nat = new Student("123", "nat", "cas", 22, natcourses);
 	LinkedList<Student> peopletoenroll = new LinkedList<Student>();
-	LinkedList<Course> joncourses = new LinkedList<Course>();
+	
+	Course calculus = new Course("Math", "Calculus", 3, enrollmentList);
+	
+	List<String> natcourses = new ArrayList<String>();
+	Student nat = new Student("123", "nat", "cas", 22, natcourses);
+	List<String> joncourses = new ArrayList<String>();
 	Student jon = new Student("456", "jon", "ma", 21, joncourses);
-	LinkedList<Course> fetuscourses = new LinkedList<Course>();
+	List<String> fetuscourses = new ArrayList<String>();
 	Student fetus = new Student("789", "fetus", "little", 18, fetuscourses);
 	
 	@Test

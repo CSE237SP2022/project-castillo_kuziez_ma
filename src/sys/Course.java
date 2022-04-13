@@ -1,4 +1,4 @@
-package system;
+package sys;
 
 import java.util.*;
 
@@ -37,11 +37,7 @@ public class Course {
     
     
     /*
-     * THEY HAVE TO IMPLEMENT THE REST, HAVE TO WRITE EVERYTHING WITH 
-     */
-    
-    /*
-     * findStudentById: FIXME finds a student in enrolled by a given id, returns null if not found
+     * findStudentById: finds a student in enrolled by a given id, returns null if not found
      */
     public Student findStudentById(String id) {
     	for (Student s : enrolled) {
@@ -52,7 +48,7 @@ public class Course {
     }
     
     /*
-     * enrollStudents: FIXME enrolls list of students, must also add this course to their listing
+     * enrollStudents: enrolls list of students, must also add this course to their listing
      */
     public void enrollStudents(LinkedList<Student> students) {
     	LinkedList<String> ids = this.getEnrolledId();
@@ -70,8 +66,8 @@ public class Course {
     }
     
     /*
-     * removeStudents: FIXME removes list of students, must check that student's ids and last names match
-     * 					     before removing them, do not need to remove this course from their listing
+     * removeStudents: removes list of students, must check that student's ids and last names match
+     * 				   before removing them, do not need to remove this course from their listing
      */
     public void removeStudents(LinkedList<Student> students) {
     	LinkedList<String> ids = this.getEnrolledId();
@@ -90,8 +86,8 @@ public class Course {
     }
     
     /*
-     * enrollWithRestriction: FIXME some classes like zymurgy (fermentation science) require 21+ legal
-     * 								drinking age so only allow students that are 21+ (idk)
+     * enrollWithRestriction: some classes like zymurgy (fermentation science) require 21+ legal
+     * 					      drinking age so only allow students that are 21+ (idk)
      */
     public void enrollWithRestriction(LinkedList<Student> students) {
     	LinkedList<Student> allowedStudents = new LinkedList<Student>();

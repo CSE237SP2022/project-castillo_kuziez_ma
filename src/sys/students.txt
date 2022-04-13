@@ -1,0 +1,10 @@
+student
+101010
+Jon
+Ma
+21
+student
+010101
+Talia
+Castillo
+22

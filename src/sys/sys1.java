@@ -1,10 +1,10 @@
-package system;
+package sys;
 
 import java.util.*;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-public class System {
+public class sys1 {
 	public static void main(String args[]) throws FileNotFoundException {
 		 
         //creating File instance to reference text file in Java
@@ -17,7 +17,7 @@ public class System {
         int lineNumber = 1;
         while(scnr.hasNextLine()){
             String line = scnr.nextLine();
-            System.out.println();
+//            sys1.out.println();
             lineNumber++;
         }      
    
