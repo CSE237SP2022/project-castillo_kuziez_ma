@@ -6,9 +6,16 @@ Java command line project that is fed in a text file with students and availible
 Iteration 1:
 -Created methods necessary to create a student and their schedule
 -Created methods necessary to create a course and track student enrollment
--Made JUnit tests for all current methods
+-Made JUnit tests for all course methods
+
+Iteration 2:
+-cleaned up JUnit tests for all course methods and added student JUnit tests
+
 
 Iteration 2 TO-DO:
 -Create branching system
 -Make bash script to compile and run
 -Make sample .txt file for student names and courses 
+
+Iteration 3 TO-DO:
+
