@@ -18,7 +18,6 @@ public class Student {
 		lastName = "Doe";
 		age = 18;
 		courses = new LinkedList<Course>();
-		courses.add(new Course());
 	}
 
 	public Student(String id, String firstName, String lastName, int age, LinkedList<Course> courses) {
@@ -28,6 +27,15 @@ public class Student {
 		this.age = age;
 		this.courses = courses;
 	}
+	
+	public Student(String id, String firstName, String lastName, int age) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.courses = new LinkedList<Course>();
+	}
+	
 	
 	public String getId() {
 		return id;
