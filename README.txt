@@ -1,7 +1,9 @@
 # project-castillo_kuziez_ma
 project-castillo_kuziez_ma created by GitHub Classroom
-WEBSTAC:
-Java command line project that is fed in a text file with students and availible courses and enrolls student into courses.
+Project title: WEBSTAC
+
+one sentence summary: a Java project compiled and run from the command line that intakes text files with names of students,
+courses and their enrollments to initialize, then allows you to make and enroll other students.
 
 Iteration 1:
 -Created methods necessary to create a student and their schedule
