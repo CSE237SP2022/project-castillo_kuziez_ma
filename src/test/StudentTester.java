@@ -44,7 +44,6 @@ class StudentTester {
 		Course calculus = new Course("Math", "Calculus", 3, enrollmentList);
 		Bear.addCourse(calculus);
 		LinkedList<String> BearCode = Bear.getCourseCodes();
-		
 		assertTrue((BearCode.getFirst()).equals(calculus.code));
 	}
 

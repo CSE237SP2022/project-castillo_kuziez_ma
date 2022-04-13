@@ -67,7 +67,6 @@ class CourseTester {
 		peopletoenroll.add(jon);
 		zymurgy.enrollWithRestriction(peopletoenroll);
 		peopletoenroll.remove();
-		
 		assertEquals(enrollmentList, peopletoenroll);
 	}
 
