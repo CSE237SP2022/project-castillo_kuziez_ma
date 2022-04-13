@@ -15,7 +15,7 @@ An interface prompts users to select either adding a course, student or ending t
 
 ## Iteration 2:
 - Created Webstac class
-- created interface to add a student or add a classs
+- created interface to add a student or add a class via java interface
 - Created .txt files to store existing data
 - Created methods necessary to use .txt files to set up a system
 - Created script to run program for demo
