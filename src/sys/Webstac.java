@@ -135,9 +135,9 @@ public class Webstac {
     		command = myObj.nextLine();  // Read user input
     		
     		if(command.equals("Add student")) {
+    			Student jack;
     			Student placeholder=new Student();
     			System.out.println("Please enter First name");
-    			placeholder.firstName=myObj.nextLine();
     			
     			
     		}
@@ -147,7 +147,6 @@ public class Webstac {
     			
     		}
     			
-    		System.out.println("Username is: " + userName);  // Output user input
       }
     }
     	
