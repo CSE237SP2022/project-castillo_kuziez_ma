@@ -16,3 +16,6 @@ Iteration 2 TO-DO:
 -Create branching system
 -Make bash script to compile and run
 -Make sample .txt file for student names and courses 
+
+Iteration 3 TO-DO:
+
