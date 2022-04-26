@@ -16,16 +16,15 @@ class CourseTester {
 	Course calculus = new Course("Math", "Calculus", 3, enrollmentList);
 	
 	List<String> natcourses = new ArrayList<String>();
-	Student nat = new Student("123", "nat", "cas", 22, natcourses);
+	Student nat = new Student("123000", "nat", "cas", 22, natcourses);
 	List<String> joncourses = new ArrayList<String>();
-	Student jon = new Student("456", "jon", "ma", 21, joncourses);
+	Student jon = new Student("456000", "jon", "ma", 21, joncourses);
 	List<String> fetuscourses = new ArrayList<String>();
-	Student fetus = new Student("789", "fetus", "little", 18, fetuscourses);
+	Student fetus = new Student("789000", "fetus", "little", 18, fetuscourses);
 	
 	@Test
 	void testgetEnrolledID() {
-		peopletoenroll.add(nat);
-		calculus.enrollStudents(peopletoenroll);
+		calculus.enroll(nat);
 		LinkedList<String> id = calculus.getEnrolledId();
 		
 		assertTrue((id.getFirst()).equals(nat.getId()));
@@ -35,7 +34,8 @@ class CourseTester {
 	void testEnrollStudents() {
 		peopletoenroll.add(nat);
 		peopletoenroll.add(jon);
-		calculus.enrollStudents(peopletoenroll);
+		calculus.enroll(nat);
+		calculus.enroll(jon);
 		
 		assertEquals(enrollmentList, peopletoenroll);
 	}
@@ -43,19 +43,18 @@ class CourseTester {
 	@Test
 	void testFindStudentbyID() {
 		peopletoenroll.add(nat);
-		calculus.enrollStudents(peopletoenroll);
+		calculus.enroll(nat);
 		
-		assertEquals(calculus.findStudentById("123"), nat);
+		assertEquals(calculus.findStudentById("123000"), nat);
 	}
 	
 	@Test
 	void testRemoveStudnets() {
 		peopletoenroll.add(nat);
 		peopletoenroll.add(jon);
-		calculus.enrollStudents(peopletoenroll);
-		LinkedList<Student> removeList = new LinkedList<Student>();
-		removeList.add(nat);
-		calculus.removeStudents(removeList);
+		calculus.enroll(nat);
+		calculus.enroll(jon);
+		calculus.remove(nat);
 		peopletoenroll.remove();
 		
 		assertEquals(enrollmentList, peopletoenroll);
@@ -64,10 +63,9 @@ class CourseTester {
 	@Test
 	void testEnrollwithResitriction() {
 		Course zymurgy = new Course("Science", "zymurgy", 3, enrollmentList);
-		peopletoenroll.add(fetus);
 		peopletoenroll.add(jon);
-		zymurgy.enrollWithRestriction(peopletoenroll);
-		peopletoenroll.remove();
+		zymurgy.enrollWithRestriction(jon);
+		zymurgy.enrollWithRestriction(fetus);
 		assertEquals(enrollmentList, peopletoenroll);
 	}
 
