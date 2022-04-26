@@ -2,8 +2,8 @@ course
 cse237
 Programming Tools and Techniques
 3
-101010
 010101
+101010
 course
 ese498
 Electrical Engineering Capstone

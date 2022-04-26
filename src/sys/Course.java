@@ -11,7 +11,7 @@ public class Course {
     
 
     public Course() {
-    	code = "WIP";
+    	code = "wip100";
     	name = "Placeholder";
     	credits = 3;
     	enrolled = new LinkedList<Student>();
@@ -48,57 +48,41 @@ public class Course {
     }
     
     /*
-     * enrollStudents: enrolls list of students, must also add this course to their listing
+     * enroll: enrolls student
      */
-    public void enrollStudents(LinkedList<Student> students) {
+    public boolean enroll(Student s) {
     	LinkedList<String> ids = this.getEnrolledId();
     	
-    	for (Student s : students) {
-    		String potentialId = s.getId();
-    		if (potentialId.equals("000000")) continue; // John Doe student
-    		
-    		if (!ids.contains(potentialId)) {
-    			enrolled.add(s);
-    			// not sure actually how global this is, might have to change
-    			s.addCourse(this);
-    		}
+    	if (ids.contains(s.getId())) {
+    		return false;
+    	}
+    	else {
+    		enrolled.add(s);
+    		return true;
     	}
     }
     
     /*
-     * removeStudents: removes list of students, must check that student's ids and last names match
-     * 				   before removing them, do not need to remove this course from their listing
+     * remove: removes student
      */
-    public void removeStudents(LinkedList<Student> students) {
+    public boolean remove(Student s) {
     	LinkedList<String> ids = this.getEnrolledId();
     	
-    	for (Student s : students) {
-    		String potentialId = s.getId();
-    		if (ids.contains(potentialId)) {
-    			Student potentialStudent = this.findStudentById(potentialId);
-    			if (potentialStudent == null) continue;
-    			
-    			if (s.getLastName().equals(potentialStudent.getLastName())) {
-    				enrolled.remove(potentialStudent);
-    			}
-    		}
+    	if (ids.contains(s.getId())) {
+    		enrolled.remove(s);
+    		return true;
     	}
+    	return false;
     }
     
     /*
      * enrollWithRestriction: some classes like zymurgy (fermentation science) require 21+ legal
      * 					      drinking age so only allow students that are 21+ (idk)
      */
-    public void enrollWithRestriction(LinkedList<Student> students) {
-    	LinkedList<Student> allowedStudents = new LinkedList<Student>();
-    	
-    	for (Student s : students) {
-    		if (s.getAge() > 20) {
-    			allowedStudents.add(s);
-    		}
+    public void enrollWithRestriction(Student s) {
+    	if (s.getAge() > 20) {
+    		enrolled.add(s);
     	}
-    	
-    	this.enrollStudents(allowedStudents);
     }
     
     
@@ -109,4 +93,3 @@ public class Course {
     
     
 }
-
