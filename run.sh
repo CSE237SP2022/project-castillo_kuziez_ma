@@ -1,4 +1,4 @@
 #!/bin/sh
 cd src
-javac system/*java
-java system/Webstac
+javac sys/*java
+java sys/Webstac
