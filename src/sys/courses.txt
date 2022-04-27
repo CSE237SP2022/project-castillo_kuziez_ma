@@ -4,9 +4,23 @@ Programming Tools and Techniques
 3
 010101
 101010
+202020
 course
 ese498
 Electrical Engineering Capstone
 3
 010101
+course
+Phy522
+Physical Measurements Lab
+3
+333333
+202020
+course
+JDs100
+John Doe's encorporated
+5
+531422
+531423
+531424
 end
