@@ -3,9 +3,11 @@ package sys;
 import java.util.*;
 import java.io.*;
 
+
+//This contains the methods, and the main to actually run the program.
 public class Webstac {
 	
-	
+	//variables to hold values throughout running
     public LinkedList<Course> courses;
     public LinkedList<Student> students;
     
@@ -111,6 +113,9 @@ public class Webstac {
         }
     }
     
+    
+    
+    //begin the actual system reading
     
     public static void main(String[] args) throws Exception {
     	// create system object

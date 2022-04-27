@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+
+//This handles text reading
 public class sys1 {
 	public static void main(String args[]) throws FileNotFoundException {
 		 
@@ -24,6 +26,7 @@ public class sys1 {
     }  
 
 	
+	//Variables to store students and courses throughout reading
     public LinkedList<Course> courses;
     public LinkedList<Student> students;
     
