@@ -113,6 +113,8 @@ public class Webstac {
         }
     }
     
+    
+    //Reads in the files and instantiates the student and courses linked lists
     public static List<Object> initsystem() throws Exception{
     	// create system object
     	Webstac webstac = new Webstac();
@@ -211,11 +213,16 @@ public class Webstac {
 		return;
     }
     
+    //adds a student to either the system or a specific course
     public static void add_student(Scanner sWebstac,Webstac webstac, List<String> copyCourses, List<String> copyStudents) {
-		System.out.println();
+		//tree of options offered via print statements and scanning for a reply
+    	
+    	System.out.println();
 		System.out.println("[course] or [system]:");
 		String next = sWebstac.nextLine();
-		// add to course
+		
+		
+		// add to course-OPTION 1
 		if (next.equals("course")) {
 			System.out.println();
 			System.out.println("course code:");
@@ -263,7 +270,7 @@ public class Webstac {
 		
 		
 		
-		// add to system
+		// add to system-OPTION 2
 		else if (next.equals("system")) {
 			System.out.println();
 			System.out.println("first name:");
@@ -277,6 +284,7 @@ public class Webstac {
 			System.out.println("ID:");
     		String id = sWebstac.nextLine();
     		System.out.println();
+    		//errors for ID's
     		while (true) {
     			if (id.length() != 6) {
         			System.out.println("ID must be 6 characters or numbers:");
@@ -297,7 +305,7 @@ public class Webstac {
     				break;
     			}
     		}
-    		
+    		//error on age
 			System.out.println("age:");
 			String tempAge = sWebstac.nextLine();
 			System.out.println();
@@ -331,8 +339,11 @@ public class Webstac {
 	}
     
     
+    
+    //Adds a course
     public static void add_course(Scanner sWebstac,Webstac webstac, List<String> copyCourses, List<String> copyStudents) {
 
+    	// prompt for code and check if already used
 		System.out.println();
 		System.out.println("course code:");
 		String code = sWebstac.nextLine();
@@ -343,6 +354,7 @@ public class Webstac {
 			System.out.println();
 		}
 		
+		//collect other information for course
 		System.out.println("course name:");
 		String name = sWebstac.nextLine();
 		System.out.println();
@@ -358,6 +370,8 @@ public class Webstac {
 		}
 		credits = Integer.parseInt(tempCredits);
 		
+		
+		//initialize the course
 		LinkedList<Student> enrolled = new LinkedList<Student>();
 		webstac.addCourse(new Course(code, name, credits, enrolled));
 		
@@ -375,12 +389,15 @@ public class Webstac {
 	
     }
     
+    // removes the student from either a course or the system
     public static void remove_student(Scanner sWebstac,Webstac webstac, List<String> copyCourses, List<String> copyStudents) {
 
+    	
+    	
 		System.out.println();
 		System.out.println("[course] or [system]:");
 		String next = sWebstac.nextLine();
-		// remove from course
+		// remove from course-OPTION 1
 		if (next.equals("course")) {
 			System.out.println();
 			System.out.println("course code:");
@@ -430,7 +447,7 @@ public class Webstac {
 				}
 			}
 		}
-		// remove from system
+		// remove from system-OPTION 2
 		else if (next.equals("system")) {
 			System.out.println();
 			System.out.println("ID of student:");
@@ -470,8 +487,11 @@ public class Webstac {
 	
     }
     
+    
+    //removes a course from the system found via course code
     public static void remove_course(Scanner sWebstac,Webstac webstac, List<String> copyCourses, List<String> copyStudents) {
 
+// get code    	
 		System.out.println();
 		System.out.println("code of course:");
 		String code = sWebstac.nextLine();
@@ -483,6 +503,7 @@ public class Webstac {
 			System.out.println("Course does not exist");
 			System.out.println();
 		}
+		//remove course and update system
 		else {
 			webstac.courses.remove(c);
 			System.out.println(c.code + " " + c.name + " has been removed");
@@ -504,10 +525,13 @@ public class Webstac {
 		}
 	
     }
+    
+    //shuts down the program
     public static void quit(Scanner sWebstac,Webstac webstac, List<String> copyCourses,
     		List<String> copyStudents, String studentsPath, String coursesPath, File students, File courses)
     throws Exception{
 
+    	//determine if we need to save changes
 		System.out.println();
 		System.out.println("save changes [y] or [n]:");
 		String next = sWebstac.nextLine();
@@ -549,6 +573,7 @@ public class Webstac {
 			// close scanner
 			sWebstac.close();
 		}
+		
 		else if (next.equals("n")) {
 			System.out.println();
 			System.out.println("changes not saved");
