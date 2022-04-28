@@ -117,8 +117,8 @@ public class Webstac {
     	Webstac webstac = new Webstac();
     	
     	// have to run it from src folder ...
-    	String studentsPath = "./sys/students.txt";
-    	String coursesPath = "./sys/courses.txt";
+    	String studentsPath = "./src/sys/students.txt";
+    	String coursesPath = "./src/sys/courses.txt";
     	
     	// get the existing students from the file in directory
     	File students = new File(studentsPath);
